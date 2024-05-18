@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holaaaa hermosa :b</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .welcome-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .welcome-container button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .welcome-container button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-container">
+        <h1>Bienvenida 😈</h1>
+        <p>Has iniciado sesion perfectamente eso significa que si le sabes 🧐.</p>
+        <p>Pregunta: ¿Cuando es mi cumpleaños?</p>
+        <button onclick="checkAnswer('incorrect')">A) 9 de octubre</button>
+        <button onclick="checkAnswer('correct')">B) 9 de septiembre</button>
+        <button onclick="checkAnswer('incorrect')">C) 9 de noviembre</button>
+    </div>
+
+    <script>
+        function checkAnswer(answer) {
+            if (answer === 'correct') {
+                window.location.href = 'pregunta.html';
+            } else {
+                alert('Respuesta incorrecta. Intenta de nuevo.');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La ultimaaa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .final-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .final-container button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .final-container button:hover {
+            background-color: #45a049;
+        }
+        .hidden {
+            display: none;
+        }
+        .image-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="final-container">
+        <h1>que tal</h1>
+        <p>Has respondido muy bien eso significa que aun sabes cosas de mi 😈.</p>
+        <div id="question1">
+            <p>Pregunta: ¿Me disculpas por ser grosero contigo?, no fue mi itencion</p>
+            <button onclick="showImage(true)">Sí</button>
+            <button onclick="showImage(false)">No</button>
+        </div>
+        <div id="question2" class="hidden">
+            <p>pusiste que no :c preguntare denuevo ¿Me disculpas?</p>
+            <button onclick="showSecondQuestion(true)">Sí</button>
+            <button onclick="showSecondQuestion(false)">No</button>
+        </div>
+        <div id="question3" class="hidden">
+            <p>como que no denuevo 🤡 dale que siii¿Me disculpas por ser grosero contigo?</p>
+            <button onclick="showImage(true)">Sí</button>
+            <button onclick="showImage(false)">No</button>
+        </div>
+        <div id="imageContainer" class="image-container hidden">
+            <img id="image" src="" alt="Imagen" width="300">
+        </div>
+    </div>
+
+    <script>
+        function showImage(show) {
+            const question1 = document.getElementById('question1');
+            const question2 = document.getElementById('question2');
+            const imageContainer = document.getElementById('imageContainer');
+            const image = document.getElementById('image');
+            
+            if (show) {
+                question1.classList.add('hidden');
+                question2.classList.add('hidden');
+                imageContainer.classList.remove('hidden');
+                image.src = "https://media.tenor.com/vhxp8VLoMOwAAAAM/hug-love.gif"; // Reemplaza con la URL de la imagen para la respuesta "Sí"
+            } else {
+                question1.classList.add('hidden');
+                question2.classList.remove('hidden');
+            }
+        }
+
+        function showSecondQuestion(likesCats) {
+            const question2 = document.getElementById('question2');
+            const question3 = document.getElementById('question3');
+            const imageContainer = document.getElementById('imageContainer');
+            const image = document.getElementById('image');
+
+            if (likesCats) {
+                question2.classList.add('hidden');
+                imageContainer.classList.remove('hidden');
+                image.src = "https://media.tenor.com/vhxp8VLoMOwAAAAM/hug-love.gif"; // Reemplaza con la URL de la imagen para "Te gustan los gatos"
+            } else {
+                question2.classList.add('hidden');
+                question3.classList.remove('hidden');
+            }
+        }
+        function goToNextPage() {
+            window.location.href = 'cuarto.html';
+        }
+    </script>
+</body>
+</html>
